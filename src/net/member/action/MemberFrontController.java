@@ -61,6 +61,33 @@ public class MemberFrontController extends HttpServlet {
         	forward = new ActionForward();
         	forward.setPath("./member/loginForm.jsp");
         	forward.setRedirect(false);
+        } else if(command.equals("/MemberLoginAction.me")) {
+        	// MemberLoginAction 파일 만들기
+        	action = new MemberLoginAction();
+        	try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+        } else if(command.equals("/MemberMain.me")) {
+        	forward = new ActionForward();
+        	forward.setPath("./member/main.jsp");
+        	forward.setRedirect(false);
+        } else if(command.equals("/MemberViewAction.me")) {
+        	// MemberViewAction 파일 생성, 객체 생성, 메서드 호출
+        	action = new MemberViewAction();
+        	try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+        } else if(command.equals("/MemberListAction.me")) {
+        	action = new MemberListAction();
+        	try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
         }
         // 이동 따로 수행
         if(forward != null) {
