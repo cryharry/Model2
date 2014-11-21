@@ -12,21 +12,13 @@
 	String id = (String)session.getAttribute("id");
 	// 세션값 없으면 loginForm.jsp 이동
 	 if(id == null) {
-	    response.sendRedirect("loginForm.jsp");
+	    response.sendRedirect("./MemberLogin.me");
 	}
 %>
-<h1>메인페이지</h1>
-<%=id %>님이 로그인 하셨습니다.<br>
-<a href="./MemberLogout.me">로그아웃</a><br>
-<a href="./MemberViewAction.me">회원정보조회</a><br>
-<a href="./MemberUpdate.me">회원정보수정</a><br>
-<a href="./MemberDelete.me">회원정보삭제</a><br>
-<%
-	if(id!= null && id.equals("admin")) {
-%>
-		<a href="./MemberListAction.me">회원목록</a>
-<%
-	}
-%>
+<h1>회원정보삭제</h1>
+<form action="./MemberDeleteAction.me" method="post">
+비밀번호:<input type="password" name="passwd"><br>
+<input type="submit" value="회원삭제">
+</form>
 </body>
 </html>

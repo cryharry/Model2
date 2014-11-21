@@ -9,8 +9,6 @@ import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -83,6 +81,38 @@ public class MemberFrontController extends HttpServlet {
 			}
         } else if(command.equals("/MemberListAction.me")) {
         	action = new MemberListAction();
+        	try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+        } else if(command.equals("/MemberLogout.me")) {
+        	action = new MemberLogoutAction();
+        	try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+        } else if(command.equals("/MemberUpdate.me")) {
+        	action = new MemberUpdate();
+        	try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+        } else if(command.equals("/MemberUpdateAction.me")) {
+        	action = new MemberUpdateAction();
+        	try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+        } else if(command.equals("/MemberDelete.me")) {
+        	forward = new ActionForward();
+        	forward.setPath("./member/delete.jsp");
+        	forward.setRedirect(false);
+        } else if(command.equals("/MemberDeleteAction.me")) {
+        	action = new MemberDeleteAction();
         	try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
