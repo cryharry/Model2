@@ -209,4 +209,23 @@ public class MemberDAO {
         }
         return memberlist;
     }
+
+	public List searchZipCode(String dong) {
+		List zipList = new ArrayList();
+		try {
+			conn = dbConn();
+			sql = "SELECT * FROM zipcode WHERE dong LIKE '%?%'";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, dong);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				zipList.add(rs.getString("zipcode"));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			
+		}
+		return zipList;
+	}
 }

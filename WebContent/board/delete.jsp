@@ -9,8 +9,8 @@
 <body>
 <%
 	// 파라미터 가져오기 num pageNum
-	int num = Integer.parseInt(request.getAttribute("num").toString());
-	String pageNum = (String)request.getAttribute("pageNum");
+	int num = Integer.parseInt(request.getParameter("num"));
+	String pageNum = (String)request.getParameter("pageNum");
 %>
 	<h1>글삭제</h1>
 	<h3>

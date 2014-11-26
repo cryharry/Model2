@@ -8,10 +8,10 @@
 </head>
 <body>
 <%
-	int num = Integer.parseInt(request.getAttribute("num").toString());
-	int re_ref = Integer.parseInt(request.getAttribute("re_ref").toString());
-	int re_lev = Integer.parseInt(request.getAttribute("re_lev").toString());
-	int re_seq = Integer.parseInt(request.getAttribute("re_seq").toString());
+	int num = Integer.parseInt(request.getParameter("num"));
+	int re_ref = Integer.parseInt(request.getParameter("re_ref"));
+	int re_lev = Integer.parseInt(request.getParameter("re_lev"));
+	int re_seq = Integer.parseInt(request.getParameter("re_seq"));
 %>
 	<h1>답글쓰기</h1>
 	<h3>

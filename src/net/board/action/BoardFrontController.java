@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class BoardFrontController extends HttpServlet {
-	
 	private void doProcess(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// 가상주소 뽑아오는 작업
@@ -62,12 +61,10 @@ public class BoardFrontController extends HttpServlet {
 				e.printStackTrace();
 			}
 		} else if(command.equals("/BoardDelete.bo")) {
-			action = new BoardDelete();
-			try {
-				forward = action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+			// ./board/delete.jsp 이동
+			forward = new ActionForward();
+			forward.setPath("./board/delete.jsp");
+			forward.setRedirect(false);
 		} else if(command.equals("/BoardDeleteAction.bo")) {
 			action = new BoardDeleteAction();
 			try {
@@ -76,14 +73,17 @@ public class BoardFrontController extends HttpServlet {
 				e.printStackTrace();
 			}
 		} else if(command.equals("/BoardReply.bo")) {
-			action = new BoardReply();
+			// ./board/reply.jsp 이동
+			forward = new ActionForward();
+			forward.setPath("./board/reply.jsp");
+			forward.setRedirect(false);
+		} else if(command.equals("/BoardReplyAction.bo")) {
+			action = new BoardReplyAction();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if(command.equals("")) {
-			
 		}
 		// 이동
 		if(forward!=null) {
