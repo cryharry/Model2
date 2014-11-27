@@ -25,6 +25,9 @@
 	if(id!= null && id.equals("admin")) {
 %>
 		<a href="./MemberListAction.me">회원목록</a>
+		<a href="./GoodsAddForm.ag">상품등록</a>
+		<a href="./GoodsList.ag">상품목록</a>
+		<a href="">주문목록</a>
 <%
 	}
 %>

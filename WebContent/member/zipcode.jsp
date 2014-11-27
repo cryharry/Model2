@@ -1,3 +1,4 @@
+<%@page import="java.util.StringTokenizer"%>
 <%@page import="java.util.List"%>
 <%@page import="net.member.db.ZipcodeBean"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -10,13 +11,12 @@
 <script src="./js/jquery-1.11.1.js"></script>
 <script type="text/javascript">
 $(function(){
-	$('table tr').each(function(idx){
+	$('table tr').each(function(){
 		$(this).click(function(){
 			var s_text = $(this).children().text();
-			opener.document.getElementById('zipcode1').value = s_text.substring(0,3);
-			opener.document.getElementById('zipcode2').value = s_text.substring(4,7);
-			opener.document.getElementById('addr1').value = s_text.substring(7,s_text.search('동')+1);
-			opener.document.getElementById('addr2').value = s_text.substring(s_text.search('동')+1,$(this).text().length);
+			opener.document.frm.zipcode1.value = s_text.substring(0,3);
+			opener.document.frm.zipcode2.value = s_text.substring(4,7);
+			opener.document.frm.addr1.value = s_text.substring(7,s_text.length);
 			window.close();
 		});
 	})
@@ -42,18 +42,31 @@ $(function(){
 	<%if(zipcodeList != null) {
 		for(int i=0;i<zipcodeList.size();i++) {
 			ZipcodeBean zipcodeBean = (ZipcodeBean)zipcodeList.get(i);
-			String addr1 = zipcodeBean.getSido()+ " " + zipcodeBean.getGugun() + " "
-					+ zipcodeBean.getDong();
-			String addr2 = zipcodeBean.getRi() + " " + zipcodeBean.getBunji();
+			String addr = zipcodeBean.getSido()+" "+zipcodeBean.getGugun()
+					+" "+zipcodeBean.getDong()+" "+zipcodeBean.getRi()+" "+
+					zipcodeBean.getBunji();
+			/*
+				data의 내용을 ,로 분리
+				StringTokenizer st = new StringTokenizer(data,",");
+				String zipcode = st.nextToken(); <-,앞에꺼
+				String addr = st.nextToken(); <-,뒤에꺼
+				
+				zip1 = zipcode.split("-")[0];
+				zip2 = zipcode.split("-")[1];
+			*/
 			%>
 			<tr>
-				<td><a href="#none" id="zipcode"><%=zipcodeBean.getZipcode() %></a></td>
-				<td><a href="#none" id="addr"><%=addr1 %> <%=addr2 %></a></td>
+				<td><a href="#" id="zipcode"><%=zipcodeBean.getZipcode() %></a></td>
+				<td><a href="#" id="addr"><%=addr %></a></td>
 			</tr>
 			<%
 		}
-	} 
+	} else {
 %>
+		<tr>
+			<td colspan="2">검색 결과가 없습니다.</td>
+		</tr>
+<%	} %>
 </table>
 </body>
 </html>
