@@ -1,46 +1,46 @@
-¸ğµ¨1
-Model:µğºñÀÛ¾÷(java)
-View,Controller : µğÀÚÀÎ,Ã³¸®(jsp)
+ï»¿ëª¨ë¸1
+Model:ë””ë¹„ì‘ì—…(java)
+View,Controller : ë””ìì¸,ì²˜ë¦¬(jsp)
 
-¸ğµ¨2(MVC)
-Model : µğºñÀÛ¾÷(java)
-View : µğÀÚÀÎ (jsp)
-Controller : Ã³¸®(java)
+ëª¨ë¸2(MVC)
+Model : ë””ë¹„ì‘ì—…(java)
+View : ë””ìì¸ (jsp)
+Controller : ì²˜ë¦¬(java)
 
-Å¬¶óÀÌ¾ğÆ® ¿äÃ»-> ¼­¹ö(¾ÆÆÄÄ¡) ÀÀ´ä ->
-Ã³¸®(WAS,ÅèÄ¹,ÄÁÅ×ÀÌ³Ê) ->
-request,response °´Ã¼»ı¼º 
-web.xml ÂüÁ¶
-¼­ºí¸´ »ı¼º ÃÊ±âÈ­ 
-¼­ºí¸´ ½º·¹µå »ı¼º 
-service¸Ş¼­µåÈ£Ãâ
-doGet() doPost()¸Ş¼­µå È£Ãâ
+í´ë¼ì´ì–¸íŠ¸ ìš”ì²­-> ì„œë²„(ì•„íŒŒì¹˜) ì‘ë‹µ ->
+ì²˜ë¦¬(WAS,í†°ìº£,ì»¨í…Œì´ë„ˆ) ->
+request,response ê°ì²´ìƒì„± 
+web.xml ì°¸ì¡°
+ì„œë¸”ë¦¿ ìƒì„± ì´ˆê¸°í™” 
+ì„œë¸”ë¦¿ ìŠ¤ë ˆë“œ ìƒì„± 
+serviceë©”ì„œë“œí˜¸ì¶œ
+doGet() doPost()ë©”ì„œë“œ í˜¸ì¶œ
 
-ÀÀ´ä - > ¼­¹ö -> Å¬¶óÀÌ¾ğÆ® ÀÀ´ä
-request,response,¼­ºí¸´ ½º·¹µå °´Ã¼¼Ò¸ê
+ì‘ë‹µ - > ì„œë²„ -> í´ë¼ì´ì–¸íŠ¸ ì‘ë‹µ
+request,response,ì„œë¸”ë¦¿ ìŠ¤ë ˆë“œ ê°ì²´ì†Œë©¸
 
-Å¬¶óÀÌ¾ğÆ® ¿äÃ»(°¡»óÁÖ¼Ò)
+í´ë¼ì´ì–¸íŠ¸ ìš”ì²­(ê°€ìƒì£¼ì†Œ)
 -> web.xml 
--> ¼­ºí¸´ ¿¬°á (ÇÁ·ÎÆ® Ã³¸®)
--> view / Ã³¸®(µğºñ¿¬°á)
+-> ì„œë¸”ë¦¿ ì—°ê²° (í”„ë¡œíŠ¸ ì²˜ë¦¬)
+-> view / ì²˜ë¦¬(ë””ë¹„ì—°ê²°)
 
-//È¸¿ø°¡ÀÔ
+//íšŒì›ê°€ì…
 http://localhost:8080/Model2/MemberJoin.me
--> http://localhost:8080/ÇÁ·ÎÁ§Æ®/writeForm.jspÀÌµ¿
--> writePro.jspÀÌµ¿
-(http://localhost:8080/ÇÁ·ÎÁ§Æ®/MemberJoinAction.me)
--> Ã³¸® -> ÀÚ¹ÙÆÄÀÏ(Æû->ÀÚ¹ÙºóÀúÀå->µğºñ»ı¼º->¸Ş¼­µåÈ£Ãâinsert)
+-> http://localhost:8080/í”„ë¡œì íŠ¸/writeForm.jspì´ë™
+-> writePro.jspì´ë™
+(http://localhost:8080/í”„ë¡œì íŠ¸/MemberJoinAction.me)
+-> ì²˜ë¦¬ -> ìë°”íŒŒì¼(í¼->ìë°”ë¹ˆì €ì¥->ë””ë¹„ìƒì„±->ë©”ì„œë“œí˜¸ì¶œinsert)
 
-//È¸¿ø°¡ÀÔ
+//íšŒì›ê°€ì…
 http://localhost:8080/Model2/MemberJoin.me
-//·Î±×ÀÎ
+//ë¡œê·¸ì¸
 http://localhost:8080/Model2/MemberLogin.me
-//¸ŞÀÎÈ­¸é
+//ë©”ì¸í™”ë©´
 http://localhost:8080/Model2/MemberMain.me
 
-°Ô½ÃÆÇ ±Û¾²±â
+ê²Œì‹œíŒ ê¸€ì“°ê¸°
 http://localhost:8080/Model2/BoardWrite.bo
-°Ô½ÃÆÇ ±Û¸ñ·Ï
+ê²Œì‹œíŒ ê¸€ëª©ë¡
 http://localhost:8080/Model2/BoardList.bo
 
 use jspbeginner;
@@ -64,7 +64,7 @@ create table zipcode(
   bunji varchar(17)
 );
 
-dµå¶óÀÌ¹ö ÆÄÀÏº¹»ç zipcode8.sql
+dë“œë¼ì´ë²„ íŒŒì¼ë³µì‚¬ zipcode8.sql
 cmd 
 d:
 mysql -u root -p
@@ -79,14 +79,41 @@ select * from zipcode;
 
 
 
-·Î±×ÀÎ 
-°ü¸®ÀÚ¸ğµå:»óÇ°µî·Ï,ÁÖ¹®°ü¸®,È¸¿ø°ü¸®,....
-»ç¿ëÀÚ¸ğµå:»óÇ°¸®½ºÆ®,»óÇ°»ó¼¼º¸±â,Àå¹Ù±¸´Ï´ã±â,ÁÖ¹®
+ë¡œê·¸ì¸ 
+ê´€ë¦¬ìëª¨ë“œ:ìƒí’ˆë“±ë¡,ì£¼ë¬¸ê´€ë¦¬,íšŒì›ê´€ë¦¬,....
+ì‚¬ìš©ìëª¨ë“œ:ìƒí’ˆë¦¬ìŠ¤íŠ¸,ìƒí’ˆìƒì„¸ë³´ê¸°,ì¥ë°”êµ¬ë‹ˆë‹´ê¸°,ì£¼ë¬¸
 
-È¸¿øÅ×ÀÌºímember
-»óÇ°Å×ÀÌºí goods
-Àå¹Ù±¸´ÏÅ×ÀÌºí 
-ÁÖ¹®Å×ÀÌºí
+íšŒì›í…Œì´ë¸”member
+ìƒí’ˆí…Œì´ë¸” goods
+ì¥ë°”êµ¬ë‹ˆí…Œì´ë¸” 
+ì£¼ë¬¸í…Œì´ë¸”
+
+//ê´€ë¦¬ìë¶€ì—¬
+alter table member
+add admin int;
+
+
+create table goods(
+  g_num int primary key,
+  g_category varchar(20),
+  g_name varchar(50),
+  g_content varchar(3000),
+  g_size varchar(10),
+  g_color varchar(20),
+  g_amount int,
+  g_price int,
+  g_image varchar(100),
+  g_best int,
+  g_date date
+);
+
+
+//ìƒí’ˆë“±ë¡
+http://localhost:8080/Model2/GoodsAddForm.ag
+
+
+
+
 
 
 
