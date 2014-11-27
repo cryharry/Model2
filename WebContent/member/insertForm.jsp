@@ -20,11 +20,11 @@
 성별:남<input type="radio" name="gender" id="txtGender" value="남">
      여<input type="radio" name="gender" id="txtGender" value="여"><br>
 이메일주소:<input type="text" name="email" id="txtEmail"><br>
-우편번호:<input type="text" name="zipcode1" value=""> - 
-<input type="text" name="zipcode2" value="">
+우편번호:<input type="text" name="zipcode1" id="zipcode1"> - 
+<input type="text" name="zipcode2" id="zipcode2">
 <input type="button" value="우편번호검색" onclick="openZipcode()"><br>
-주소:<input type="text" name="addr1"><br>
-상세주소:<input type="text" name="addr2"><br>
+주소:<input type="text" name="addr1" id="addr1"><br>
+상세주소:<input type="text" name="addr2" id="addr2"><br>
 <input type="submit" value="회원가입">
 </form>
 </body>

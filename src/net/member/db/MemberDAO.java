@@ -214,17 +214,26 @@ public class MemberDAO {
 		List zipList = new ArrayList();
 		try {
 			conn = dbConn();
-			sql = "SELECT * FROM zipcode WHERE dong LIKE '%?%'";
+			sql = "SELECT * FROM zipcode WHERE dong LIKE ?";
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, dong);
+			pstmt.setString(1, '%'+dong+'%');
 			rs = pstmt.executeQuery();
 			while(rs.next()) {
-				zipList.add(rs.getString("zipcode"));
+				ZipcodeBean zipcodeBean = new ZipcodeBean();
+				zipcodeBean.setZipcode(rs.getString("zipcode"));
+				zipcodeBean.setSido(rs.getString("sido"));
+				zipcodeBean.setGugun(rs.getString("gugun"));
+				zipcodeBean.setDong(rs.getString("dong"));
+				zipcodeBean.setRi(rs.getString("ri"));
+				zipcodeBean.setBunji(rs.getString("bunji"));
+				zipList.add(zipcodeBean);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			
+			if(rs != null) try{rs.close();}catch(Exception e){}
+            if(pstmt != null) try{pstmt.close();}catch(Exception e){}
+            if(conn != null) try{conn.close();}catch(Exception e){}
 		}
 		return zipList;
 	}

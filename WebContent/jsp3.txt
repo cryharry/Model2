@@ -1,0 +1,93 @@
+모델1
+Model:디비작업(java)
+View,Controller : 디자인,처리(jsp)
+
+모델2(MVC)
+Model : 디비작업(java)
+View : 디자인 (jsp)
+Controller : 처리(java)
+
+클라이언트 요청-> 서버(아파치) 응답 ->
+처리(WAS,톰캣,컨테이너) ->
+request,response 객체생성 
+web.xml 참조
+서블릿 생성 초기화 
+서블릿 스레드 생성 
+service메서드호출
+doGet() doPost()메서드 호출
+
+응답 - > 서버 -> 클라이언트 응답
+request,response,서블릿 스레드 객체소멸
+
+클라이언트 요청(가상주소)
+-> web.xml 
+-> 서블릿 연결 (프로트 처리)
+-> view / 처리(디비연결)
+
+//회원가입
+http://localhost:8080/Model2/MemberJoin.me
+-> http://localhost:8080/프로젝트/writeForm.jsp이동
+-> writePro.jsp이동
+(http://localhost:8080/프로젝트/MemberJoinAction.me)
+-> 처리 -> 자바파일(폼->자바빈저장->디비생성->메서드호출insert)
+
+//회원가입
+http://localhost:8080/Model2/MemberJoin.me
+//로그인
+http://localhost:8080/Model2/MemberLogin.me
+//메인화면
+http://localhost:8080/Model2/MemberMain.me
+
+게시판 글쓰기
+http://localhost:8080/Model2/BoardWrite.bo
+게시판 글목록
+http://localhost:8080/Model2/BoardList.bo
+
+use jspbeginner;
+
+alter table member
+add zipcode varchar(13);
+
+alter table member
+add addr1 varchar(70);
+
+alter table member
+add addr2 varchar(70);
+
+create table zipcode(
+  id int primary key,
+  zipcode varchar(7),
+  sido varchar(4),
+  gugun varchar(13),
+  dong varchar(24),
+  ri varchar(36),
+  bunji varchar(17)
+);
+
+d드라이버 파일복사 zipcode8.sql
+cmd 
+d:
+mysql -u root -p
+1234
+
+use jspbeginner;
+
+
+\. zipcode8.sql
+
+select * from zipcode;
+
+
+
+로그인 
+관리자모드:상품등록,주문관리,회원관리,....
+사용자모드:상품리스트,상품상세보기,장바구니담기,주문
+
+회원테이블member
+상품테이블 goods
+장바구니테이블 
+주문테이블
+
+
+
+
