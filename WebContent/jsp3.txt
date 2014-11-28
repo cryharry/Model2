@@ -107,11 +107,18 @@ create table goods(
   g_date date
 );
 
+//로그인
+http://localhost:8080/Model2/MemberLogin.me
 
 //상품등록
 http://localhost:8080/Model2/GoodsAddForm.ag
 
+//상품리스트
+http://localhost:8080/Model2/GoodsList.ag
 
+D:\workspace_jsp\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Model2\upload
+
+Chrysanthemum.jpg,Desert.jpg,Hydrangeas.jpg,Jellyfish.jpg
 
 
 
