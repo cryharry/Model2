@@ -1,7 +1,6 @@
 package net.admin.goods.action;
 
 import java.io.IOException;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -9,13 +8,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class AdminGoodsFrontController extends HttpServlet {
-
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		doProcess(request, response);
 	}
-
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -34,6 +31,20 @@ public class AdminGoodsFrontController extends HttpServlet {
 			forward = new ActionForward();
 			forward.setPath("./admingoods/ag_write.jsp");
 			forward.setRedirect(false);
+		} else if(command.equals("/GoodsAddAction.ag")) {
+			action = new GoodsAddAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if(command.equals("/GoodsList.ag")) {
+			action = new GoodsListAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 		
 		if(forward!=null){
@@ -45,5 +56,4 @@ public class AdminGoodsFrontController extends HttpServlet {
 			}
 		}
 	}
-	
 }
