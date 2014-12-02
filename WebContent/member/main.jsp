@@ -21,13 +21,14 @@
 <a href="./MemberViewAction.me">회원정보조회</a><br>
 <a href="./MemberUpdate.me">회원정보수정</a><br>
 <a href="./MemberDelete.me">회원정보삭제</a><br>
+<a href="./GoodsList.go">쇼핑몰메인</a><br>
 <%
 	if(id!= null && id.equals("admin")) {
 %>
 		<a href="./MemberListAction.me">회원목록</a><br>
 		<a href="./GoodsAddForm.ag">상품등록</a><br>
 		<a href="./GoodsList.ag">상품목록</a><br>
-		<a href="./OrderList.ag">주문목록</a>
+		<a href="./AdminOrderList.ao">주문목록</a>
 <%
 	}
 %>

@@ -6,50 +6,40 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>상품 목록 페이지</title>
+<title>Insert title here</title>
 </head>
 <body>
 <%
-	ArrayList list = (ArrayList)request.getAttribute("list");
+//request.setAttribute("list", list);
+ArrayList list=(ArrayList)request.getAttribute("list");
 %>
+<h1>상품목록</h1>
+<h3><a href="./GoodsAddForm.ag">상품등록</a></h3>
 <table border="1">
-	<tr>
-		<td>상품번호</td>
-		<td>카테고리</td>
-		<td>사진</td>
-		<td>상품명</td>
-		<td>단가</td>
-		<td>수량</td>
-		<td>등록일자</td>
-		<td></td>
-	</tr>
-	<%
-	if(list!= null) {
-		for(int i=0;i<list.size();i++){
-			GoodsBean goodsBean = (GoodsBean)list.get(i);
-			%>
-			<tr>
-				<td><%=goodsBean.getG_num() %></td>
-				<td><%=goodsBean.getG_category() %></td>
-				<td>
-				<%  for(int j=0;j<goodsBean.getG_image().split(",").length;j++){ %>
-						<img src="./upload/<%=goodsBean.getG_image().split(",")[j]%>" width="100" height="100">
-				<%	} %>
-				</td>
-				<td><%=goodsBean.getG_name() %></td>
-				<td><%=goodsBean.getG_price() %></td>
-				<td><%=goodsBean.getG_amount() %></td>
-				<td><%=goodsBean.getG_date() %></td>
-				<td><a href="./">수정</a> <a href="./">삭제</a></td>
-			</tr>
-			<%
-		}
-	} else { %>
-		<tr>
-			<td colspan="8">상품없음</td>
-		</tr>
-<%	} %>
+<tr><td>번호</td><td>카테고리</td><td>사진</td>
+<td>상품명</td><td>단가</td><td>수량</td>
+<td>등록일자</td><td>수정/삭제</td></tr>
+<%
+if(list==null || list.size()==0){
+%>
+<tr><td colspan="8">상품없음</td></tr>
+<%
+}else{
+	for(int i=0;i<list.size();i++){
+		GoodsBean gb=(GoodsBean)list.get(i);
+		%>
+<tr><td><%=gb.getG_num() %></td>
+<td><%=gb.getG_category() %></td>
+<td>
+<img src="./upload/<%=gb.getG_image().split(",")[0] %>" width="50" height="50">
+<%=gb.getG_image() %></td><td><%=gb.getG_name() %></td>
+<td><%=gb.getG_price() %></td><td><%=gb.getG_amount() %></td>
+<td><%=gb.getG_date() %></td><td>수정/삭제</td></tr>		
+		<%
+	}	
+}
+%>
+
 </table>
-<a href="./MemberMain.me">메인으로</a>
 </body>
 </html>

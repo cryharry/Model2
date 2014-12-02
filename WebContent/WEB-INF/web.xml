@@ -40,4 +40,44 @@
   	<url-pattern>*.ag</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+  	<servlet-name>GoodsFrontController</servlet-name>
+  	<servlet-class>net.goods.action.GoodsFrontController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>GoodsFrontController</servlet-name>
+  	<url-pattern>*.go</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>AdminOrderFrontController</servlet-name>
+  	<servlet-class>net.admin.order.action.AdminOrderFrontController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>AdminOrderFrontController</servlet-name>
+  	<url-pattern>*.ao</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>BasketFrontController</servlet-name>
+  	<servlet-class>net.basket.action.BasketFrontController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>BasketFrontController</servlet-name>
+  	<url-pattern>*.ba</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>OrderFrontController</servlet-name>
+  	<servlet-class>net.order.action.OrderFrontController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>OrderFrontController</servlet-name>
+  	<url-pattern>*.or</url-pattern>
+  </servlet-mapping>
+  
 </web-app>
