@@ -25,9 +25,9 @@ public class AdminOrderDetailListAction implements Action {
 			forward.setPath("./MemberLogin.me");
 			return forward;
 		}
-String num=request.getParameter("num");
-AdminOrderDAO orderdao=new AdminOrderDAO();
-//List goods_order_detail_list =   getOrderList(id)
+		String num=request.getParameter("num");
+		AdminOrderDAO orderdao=new AdminOrderDAO();
+		//List goods_order_detail_list =   getOrderList(id)
 		List goods_order_detail_list= orderdao.getOrderDetailList(num);
 		//저장 goods_order_detail_list
 		request.setAttribute("goods_order_detail_list", goods_order_detail_list);
